@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkiStatsApp", "SkiStatsApp\SkiStatsApp.csproj", "{CAEE9E46-317F-4D9E-BD86-EB4B2D7D149F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkiStatsApp.Tests", "SkiStatsApp.Tests\SkiStatsApp.Tests.csproj", "{DCC6A8CF-1B74-496F-B33E-EB99ED6D0312}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CAEE9E46-317F-4D9E-BD86-EB4B2D7D149F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAEE9E46-317F-4D9E-BD86-EB4B2D7D149F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAEE9E46-317F-4D9E-BD86-EB4B2D7D149F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAEE9E46-317F-4D9E-BD86-EB4B2D7D149F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCC6A8CF-1B74-496F-B33E-EB99ED6D0312}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCC6A8CF-1B74-496F-B33E-EB99ED6D0312}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCC6A8CF-1B74-496F-B33E-EB99ED6D0312}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCC6A8CF-1B74-496F-B33E-EB99ED6D0312}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5DBCFA64-C52D-4228-BA9E-350DC4B43A36}
+	EndGlobalSection
+EndGlobal
