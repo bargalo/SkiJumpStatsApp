@@ -1,22 +1,22 @@
-﻿using static SkiStatsApp.JumperBase;
+﻿using System.Xml.Linq;
 
 namespace SkiStatsApp
 {
-    public class JumperNKasai : JumperBase
+    public class JumperInFile : JumperBase
     {
         public override event JumpLenghtDelegate JumpAdded;
-
-        private const string fileNameNoriakiKasai = "NoriakiKasai.txt";
-
-        public JumperNKasai(string name, string surname)
-            : base(name, surname)
+        
+        public JumperInFile(string name, string surname)
+           : base(name, surname)
         {
+            var fileName = File.AppendText(name + surname + ".txt");           
+            fileName.Close();
         }
         public override void AddDistance(float distance)
         {
             if (distance >= 0 && distance <= 180)
             {
-                using (var writer = File.AppendText(fileNameNoriakiKasai))
+                using (var writer = File.AppendText(Name + Surname + ".txt"))
                 {
                     writer.WriteLine(distance);
                 }
@@ -51,9 +51,9 @@ namespace SkiStatsApp
         {
             var stats = new Statistics();
 
-            if (File.Exists(fileNameNoriakiKasai))
+            if (File.Exists(Name + Surname + ".txt"))
             {
-                using (var reader = File.OpenText(fileNameNoriakiKasai))
+                using (var reader = File.OpenText(Name + Surname + ".txt"))
                 {
                     var line = reader.ReadLine();
                     while (line != null)
