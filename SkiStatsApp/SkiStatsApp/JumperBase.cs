@@ -15,10 +15,23 @@
 
         public abstract void AddDistance(float distance);
 
-        public abstract void AddDistance(string distance);
+        public virtual void AddDistance(string distance)
+        {
+            if (float.TryParse(distance, out float result))
+            {
+                AddDistance(result);
+            }
+            else
+            {
+                throw new Exception("Wrong data!");
+            }
+        }
 
-        public abstract void AddDistance(int distance); 
+        public virtual void AddDistance(int distance)
+        {
+            AddDistance((float)distance);
+        }
 
-        public abstract Statistics GetStatistics();
+        public abstract Statistics GetStatistics();       
     }
 }
