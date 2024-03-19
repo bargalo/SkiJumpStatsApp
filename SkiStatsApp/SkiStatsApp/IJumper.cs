@@ -12,5 +12,6 @@ namespace SkiStatsApp
         Statistics GetStatistics();
 
         event JumpLenghtDelegate JumpAdded;
+        void ShowStatistics();
     }
 }

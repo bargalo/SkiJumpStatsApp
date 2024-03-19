@@ -2,6 +2,8 @@
 {
     public class Statistics
     {
+        public string Name { get; set; }
+        public string Surname { get; set; }
         public float Longest { get; private set; }
         public float Shortest { get; private set; }
         public float Average
