@@ -16,7 +16,7 @@
 
         public abstract void AddDistance(float distance);
 
-        public virtual void AddDistance(string distance)
+        public void AddDistance(string distance)
         {
             if (float.TryParse(distance, out float result))
             {
@@ -28,19 +28,19 @@
             }
         }
 
-        public virtual void AddDistance(int distance)
+        public void AddDistance(int distance)
         {
             AddDistance((float)distance);
         }
 
         public abstract Statistics GetStatistics();
         
-        public virtual void ShowStatistics()
+        public void ShowStatistics()
         {            
             foreach (var stats in jumperStatsToList)
             {
                 Console.WriteLine();
-                Console.WriteLine("========== STATYSTYKI SKOCZKÓW: ==========");
+                Console.WriteLine("========== STATYSTYKI SKOCZKA: ==========");
                 Console.WriteLine("==========================================");
                 Console.WriteLine();
                 Console.WriteLine($"====== {stats.Name + " " + stats.Surname} ======");

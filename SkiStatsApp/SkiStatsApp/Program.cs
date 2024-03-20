@@ -29,29 +29,31 @@
                 switch (input)
                 {
                     case "f":
-                        AddDataToFile();
+                        AddDataAndDistance(true);
                         break;
                     case "m":
-                        AddDataToMemory();
+                        AddDataAndDistance(false);
                         break;
                 }
                 break;
             }
 
-            static void AddDataToMemory()
+            static void AddDataAndDistance(bool isInFile)
             {
                 while (true)
                 {
                     string jumperName = GetJumperData("Podaj imię skoczka:...");
                     string jumperSurname = GetJumperData("Podaj nazwisko skoczka:...");
-                    var jumperInMemory = new JumperInMemory(jumperName, jumperSurname);                   
-                    AddDistanceToJumper(jumperInMemory);
-                    jumperInMemory.AddStatistics();
+                    JumperBase jumperData = isInFile ? 
+                        new JumperInFile(jumperName, jumperSurname) : 
+                        new JumperInMemory(jumperName, jumperSurname);                   
+                    AddDistanceToJumper(jumperData);
+                    jumperData.AddStatistics();
                     Console.WriteLine("=== Aby wyświetlić aktualne statystyki wpisz 'stats' bądź wybierz dowolny klawisz aby przejść do kolejnego skoczka!");
                     var input = Console.ReadLine();
                     if (input == "stats")
                     {                        
-                        jumperInMemory.ShowStatistics();
+                        jumperData.ShowStatistics();
                         break;
                     }
                     else if (input != "stats")
@@ -60,30 +62,7 @@
                     }
                 }
             }
-
-            static void AddDataToFile()
-            {
-                while (true)
-                {
-                    string jumperName = GetJumperData("Podaj imię skoczka:...");
-                    string jumperSurname = GetJumperData("Podaj nazwisko skoczka:...");
-                    var jumperInFile = new JumperInFile(jumperName, jumperSurname);
-                    AddDistanceToJumper(jumperInFile);
-                    jumperInFile.AddStatistics();
-                    Console.WriteLine("=== Aby wyświetlić aktualne statystyki wpisz 'stats' bądź wybierz dowolny klawisz aby przejść do kolejnego skoczka!");
-                    var input = Console.ReadLine();
-                    if (input == "stats")
-                    {
-                        jumperInFile.ShowStatistics();
-                        break;
-                    }
-                    else if (input != "stats")
-                    {
-                        continue;
-                    }
-                }
-            }
-
+           
             static string GetJumperData(string comment)
             {
                 Console.WriteLine(comment);
